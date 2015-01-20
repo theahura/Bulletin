@@ -1,0 +1,9 @@
+
+
+
+Dynamically generate the rest of the calendar 
+	http://www.w3schools.com/jsref/jsref_obj_date.asp
+
+Create database tools to generate event-by-day sub-page
+
+Create add-event form builder

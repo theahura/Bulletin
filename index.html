@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<!-- latest jQuery direct from google's CDN -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+		</script>
+
+		<!--Google font -->
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+        <!--main CSS stylesheet for page -->
+		<link rel="stylesheet" href="css/main.css" />
+
+		<!--icons -->
+        <link rel="stylesheet" href="css/font-awesome-4.1.0/css/font-awesome.min.css">
+
+	</head>           
+
+
+	<body>
+
+		<div class="header">
+			Scheduler
+		</div>
+		  
+		<div class="spacer-15"></div>
+
+		<div class="side-panel">
+
+			<div class="spacer-15"></div>
+			Filter By:
+
+			<ul class="filter-container">
+				<li>
+					Location
+					<ul class="filter-location">
+						<li class="button filter-NE">
+							NorthEast
+						</li>
+						<li class="button filter-N">
+							North
+						</li>
+						<li class="button filter-MW">
+							MidWest
+						</li>
+						<li class="button filter-W">
+							West
+						</li>
+						<li class="button filter-S">
+							South
+						</li>
+						<li class="button filter-SW">
+							SouthWest
+						</li>
+					</ul>
+				</li>
+				<li>
+					Institution Type
+					<ul class="filter-location">
+						<li class="button filter-uni">
+							University
+						</li>
+						<li class="button filter-school">
+							School
+						</li>
+						<li class="button filter-corp">
+							Corporation
+						</li>
+						<li class="button filter-other">
+							Other
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class="center-panel">
+            <ul class="institution-container">
+            	<li>
+            		<a class="button calendar-name" location="NorthEast" institution="University"> Columbia University </a>
+            	</li>
+            	<li>
+            		<a class="button calendar-name" location="NorthEast" institution="School"> Pingry </a>
+            	</li>
+            </ul>
+        </div>
+		
+	</body>
+
+
+	<script type="text/javascript" src="JS/main.js"></script>
+</html>

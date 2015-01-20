@@ -1,0 +1,215 @@
+ html,body
+{
+    font-family:"Raleway", "sans-serif";
+    font-weight:200;
+    -webkit-font-smoothing:antialiased;
+    color:#42A6F3;
+    height: 100%;
+    width: 100%;
+}
+
+ul, li
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+hr
+{
+    color: #42A6F3;
+}
+
+p 
+{
+    padding: 0 0;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.button
+{
+    cursor:pointer;
+}
+
+.spacer-2
+{
+    width: 100%;
+    height: 2%;
+}
+
+.spacer-5
+{
+    width: 100%;
+    height: 5%;
+}
+
+.spacer-15
+{
+    width: 100%;
+    height: 15%;
+}
+
+.header
+{
+    position: fixed;
+    font-size:400%;
+    height: 15%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.panel-container li
+{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.center-panel
+{
+    text-align:center;
+    height: 100%;
+}
+
+    .calendar
+    {
+        margin-right: 15%;
+        margin-left: 30%;
+        margin-bottom: 10%;
+        width: 50%;
+        height: 70%;
+    }
+
+        .calendar td, .calendar th
+        {
+            border: solid;
+        }
+
+.day-panel
+{
+    height: 100%;
+    display: none;
+}
+    
+    .schedule-container
+    {
+        margin-left: 30%;
+    }
+
+.new-event-panel
+{
+    display: none;
+}
+
+    .event-panel-cover
+    {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+
+        height: 100%;
+        width: 100%;
+
+        background-color:rgba(200,200,200,.5);
+    }
+
+    .new-event-form
+    {
+        text-align: center;
+
+        position: fixed;
+
+        height: 80%;
+        width: 50%;
+
+        top: 10%;
+        left: 25%;
+
+        background: white;
+
+        border: solid;
+
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+        .new-event-form label
+        {
+            font-size: 300%;
+        }
+
+        input[type=submit], .cancel-event-form
+        {
+            padding:5px 15px; background:#ccc; border:0 none;
+            cursor:pointer;
+            -webkit-border-radius: 5px;
+            border-radius: 5px; 
+        }
+
+.side-panel
+{
+    height:100%;
+    width:20%;
+    text-align:center;
+    font-size: 200%;
+
+    position: fixed;
+}
+
+    .day-pick
+    { 
+        display: none;
+    }
+
+.filter-container
+{
+    font-size: 70%;
+    list-style: none;
+}
+
+.filter-location
+{
+    font-size: 60%;
+    list-style: none;
+}
+
+#Event_Template
+{
+        display: none;
+}
+
+.event
+{
+    height: 30px;
+    width: 100%;
+
+    background: #42A6F3;
+    color: white;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.event-info-container
+{
+    margin-left: 5%;
+    padding-top: .5%;
+}
+
+.event-info-container li
+{
+    display: inline;
+
+    padding-right: 10%;
+}
+
+.footer
+{
+    width: 100%;
+    position: fixed;
+    bottom: 0%;
+}
