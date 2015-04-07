@@ -62,9 +62,11 @@ function addEvent(inputEvent)
 
 
 //Submit button for a new event
-$(".new-event-form").submit(function(){
+$("#newEventForm").submit(function(e){
 	var eventObj = extractEvent()
 	storeEventToDB(eventObj)
+	//fade out form and clear
+	return false
 })
 
 /*

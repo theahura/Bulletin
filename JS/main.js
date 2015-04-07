@@ -14,6 +14,6 @@ socket = io('http://54.86.173.127:3003');
  */
 socket.on('connect', function() 
 {
-	alert()
+	alert("Connected")
 });
 

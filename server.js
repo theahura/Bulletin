@@ -16,15 +16,12 @@ var io = require('socket.io').listen(3003);
 //On an io socket connection...
 io.sockets.on('connection', function(socket) 
 {
-
 	socket.on('clientToServer', function(data)
 	{
 		if(!(data && data.name))
 			serverError(socket, "Data did not have a name")
 
-		console.log(data)
-
-		serverHandler(data)
+		serverHandler(socket, data)
 	});
 
 });
@@ -37,9 +34,8 @@ function serverError(socket, message)
 	});
 }
 
-function serverHandler(incomingObj)
+function serverHandler(socket, incomingObj)
 {
-	console.log(incomingObj)
 	if(incomingObj.name == "storeEventToDB")
 	{
 		storeEventToDB(incomingObj.eventObj)
@@ -48,7 +44,7 @@ function serverHandler(incomingObj)
 	{
 		if(incomingObj.type == "event")
 		{
-			eventData = requestEventFromDB(socket, query)
+			eventData = requestEventFromDB(socket, incomingObj.query)
 		}
 			
 	}
@@ -56,15 +52,15 @@ function serverHandler(incomingObj)
 
 function storeEventToDB(eventObj)
 {
-	console.log(eventObj.date)
-	client.query("CREATE TABLE IF NOT EXISTS "+eventObj.date +"(eventName varchar(64), eventLocation varchar(64), eventStart time, eventEnd time, eventDate date)");
-	client.query("INSERT INTO "+eventObj.date+"(eventName, eventLocation, eventStart, eventEnd, eventDate) values($1, $2, $3, $4, $5)", [eventObj.name, eventObj.location, eventObj.start, eventObj.end, eventObj.date]);
+	console.log(eventObj)
+	client.query("CREATE TABLE IF NOT EXISTS events(eventName varchar(64), eventLocation varchar(64), eventStart time, eventEnd time, eventDate date)");
+	client.query("INSERT INTO events(eventName, eventLocation, eventStart, eventEnd, eventDate) values($1, $2, $3, $4, $5)", [eventObj.name, eventObj.location, eventObj.start, eventObj.end, eventObj.date]);
 }
 
 
 function requestEventFromDB(socket, query)
 {
-	var query = client.query("SELECT eventName, eventLocation, eventStart, eventEnd, eventDate FROM "+query);
+	var query = client.query("SELECT eventName, eventLocation, eventStart, eventEnd, eventDate FROM events");
 
 	query.on("row", function (row, result) 
 	{

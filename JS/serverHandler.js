@@ -3,7 +3,7 @@ socket.on("serverToClient", function(data)
 {
 	if(data.name == "Error")
 	{
-		alert(data.message)
+		alert("Error: " + data.message)
 	}
 	else if(data.name == "returnRequestedEvent")
 	{
