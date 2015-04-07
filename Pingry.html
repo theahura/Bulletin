@@ -1,0 +1,4127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<!-- latest jQuery direct from google's CDN -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+		</script>
+
+		<!--Google font -->
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+        <!--main CSS stylesheet for page -->
+		<link rel="stylesheet" href="css/template_calendar.css" />
+
+		<!--icons -->
+        <link rel="stylesheet" href="css/font-awesome-4.1.0/css/font-awesome.min.css">
+
+        <script src="http://54.86.173.127:3003/socket.io/socket.io.js"></script>
+
+	</head>           
+
+
+	<body>
+
+		<div class="header">
+			Scheduler
+		</div>
+		  
+		<div class="spacer-15"></div>
+
+		<div class="side-panel">
+
+			<div class="spacer-15"></div>
+
+			<div class="button day-pick">
+				Pick a Day
+			</div>
+			<br> 
+			Filter By:
+
+			<ul class="filter-container">
+				<li>
+					Type
+					<ul class="filter-location">
+						<li class="button filter-club">
+							Club
+						</li>
+						<li class="button filter-aca">
+							Academic
+						</li>
+						<li class="button filter-ath">
+							Athletic
+						</li>
+						<li class="button filter-admin">
+							Administrative
+						</li>
+						<li class="button filter-oth">
+							Other
+						</li>
+					</ul>
+				</li>
+				
+			</ul>
+
+			<br>
+
+			<div class="day-add button"> Click & Add an Event </div>
+		</div>
+
+		<div class="center-panel">
+
+			<table class="calendar calendar_0">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+            <table class="calendar calendar_1">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+
+            <table class="calendar calendar_2">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+            <table class="calendar calendar_3">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+            <table class="calendar calendar_4">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+
+            <table class="calendar calendar_5">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+            <table class="calendar calendar_6">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+			<table class="calendar calendar_7">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+
+            <table class="calendar calendar_8">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+            <table class="calendar calendar_9">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+
+			<table class="calendar calendar_10">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+
+            <table class="calendar calendar_11">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+            <table class="calendar calendar_12">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+
+            <table class="calendar calendar_13">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+
+            <table class="calendar calendar_14">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+            <table class="calendar calendar_15">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+            <table class="calendar calendar_16">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+
+            <table class="calendar calendar_17">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+            <table class="calendar calendar_18">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+			<table class="calendar calendar_19">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+
+            <table class="calendar calendar_20">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+            <table class="calendar calendar_21">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+
+			<table class="calendar calendar_22">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+
+
+            <table class="calendar calendar_23">
+            	<tr>
+            		<th colspan="7" class="year"> Year </th>
+            	</tr>
+            	<tr>
+            		<th colspan="7" class="month"> Month </th>
+            	</tr>
+            	<tr>
+            		<th> Monday </th>
+            		<th> Tuesday </th>
+            		<th> Wednesday </th>
+            		<th> Thursday </th>
+            		<th> Friday </th>
+            		<th> Saturday </th>
+            		<th> Sunday </th>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            		<td class="day button">
+            			----
+            		</td>
+            	</tr>
+            </table>
+        </div>
+
+        <div class="day-panel">
+        	<ul class="schedule-container">
+        		<li>
+        			<div class="text">
+        				0:00; 12:00 AM
+        				<hr>
+        			</div>
+        			<ul class="am-12">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				1:00; 1:00 AM
+        				<hr>
+        			</div>
+        			<ul class="am-1">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				2:00; 2:00 AM
+        				<hr>
+        			</div>
+        			<ul class="am-2">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				3:00; 3:00 AM
+        				<hr>
+        			</div>
+        			<ul class="am-3">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				4:00; 4:00 AM
+        				<hr>
+        			</div>
+        			<ul class="am-4">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				5:00; 5:00 AM
+        				<hr>
+        			</div>
+        			<ul class="am-5">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				6:00; 6:00 AM
+        				<hr>
+        			</div>
+        			<ul class="am-6">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				7:00; 7:00 AM
+        				<hr>
+        			</div>
+        			<ul class="am-7">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				8:00; 8:00 AM
+        				<hr>
+        			</div>
+        			<ul class="am-8">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				9:00; 9:00 AM
+        				<hr>
+        			</div>
+        			<ul class="am-9">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				10:00; 10:00 AM
+        				<hr>
+        			</div>
+        			<ul class="am-10">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				11:00; 11:00 AM
+        				<hr>
+        			</div>
+        			<ul class="am-11">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				12:00; 12:00 PM
+        				<hr>
+        			</div>
+        			<ul class="pm-12">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				13:00; 1:00 PM
+        				<hr>
+        			</div>
+        			<ul class="pm-1">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				14:00; 2:00 PM
+        				<hr>
+        			</div>
+        			<ul class="pm-2">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				15:00; 3:00 PM
+        				<hr>
+        			</div>
+        			<ul class="pm-3">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				16:00; 4:00 PM
+        				<hr>
+        			</div>
+        			<ul class="pm-4">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				17:00; 5:00 PM
+        				<hr>
+        			</div>
+        			<ul class="pm-5">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				18:00; 6:00 PM
+        				<hr>
+        			</div>
+        			<ul class="pm-6">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				19:00; 7:00 PM
+        				<hr>
+        			</div>
+        			<ul class="pm-7">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				20:00; 8:00 PM
+        				<hr>
+        			</div>
+        			<ul class="pm-8">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				21:00; 9:00 PM
+        				<hr>
+        			</div>
+        			<ul class="pm-9">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				22:00; 10:00 PM
+        				<hr>
+        			</div>
+        			<ul class="pm-10">
+        				
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="text">
+        				23:00; 11:00 PM
+        				<hr>
+        			</div>
+        			<ul class="pm-11">
+        				
+        			</ul>
+        		</li>
+        	</ul>
+        </div>
+
+
+      <!-- 
+            Institution; day/month/year - stored in database, used to identify what info to pull when a day is clicked
+            startTime (rounded to lowest hour) + half_day (am/pm designation)
+            tags[] (array of strings)
+            (public info)
+            hours
+            name
+            location
+      -->
+      <div class="new-event-panel">
+            <div class="event-panel-cover">
+            </div>
+            <form class="new-event-form">
+                  <label> Add an Event </label>
+
+                  <p> Date of Event </p>
+                  <input type="date" id="eventDate" name="Date" required> 
+
+                  <p> Start and End Time </p>
+                  <input type="time" id="eventStartTime" name="StartTime" required> 
+                  <input type="time" id="eventEndTime" name="EndTime" required> 
+
+                  <p> Event Name </p>  
+
+                  <input type="text" id="eventName" name"Name" required>
+
+                  <p> Event Location </p>
+
+                  <input type="text" id="eventLocation" name"Location" required/>
+                
+                  <p> Tag your event! </p>
+                              
+                  <input type="checkbox" name="event_type" value="Club"> Club
+                  <input type="checkbox" name="event_type" value="Academic"> Academic
+                  <input type="checkbox" name="event_type" value="Athletic"> Athletic
+                  <input type="checkbox" name="event_type" value="Administritive"> Administritive
+                  <input type="checkbox" name="event_type" value="Other"> Other
+                 
+                  <div class="spacer-2"></div>
+
+                  <textarea id="eventTags"> Other Tags... </textarea>
+
+                  <div class="spacer-2"></div>
+
+                  <input class="submit-new-event" type="submit" value="Submit">
+            </form>
+      </div>
+
+
+      <li id="Event_Template">
+            <div class="event">
+                  <ul class="event-info-container">
+                        <li class="event-name">
+                              Filler
+                        </li>
+                        <li class="event-time">
+                              Filler
+                        </li>
+                        <li class="event-location">
+                              Filler
+                        </li>
+                  </ul>
+            </div>
+      </li>
+	
+
+        <div class="footer">
+        	@Amol Kapoor
+        </div>
+		
+	</body>
+      <script type="text/javascript" src="JS/main.js"></script>
+      <script type="text/javascript" src="JS/Calendar_Events.js"></script>
+	<script type="text/javascript" src="JS/CalendarUI.js"></script>
+      <script type="text/javascript" src="JS/serverHandler.js"></script>
+
+</html>
